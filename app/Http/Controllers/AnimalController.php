@@ -49,13 +49,13 @@ class AnimalController extends Controller
         $update->age = $request->age;
 
         $update->save();
-        return redirect('/');
+        return redirect('/show-animal/'.$update->id);
     }
 
     public function destroy($id)
     {
         $destroy = Animal::find($id);
         $destroy->delete();
-        return redirect();
+        return redirect('/');
     }
 }
